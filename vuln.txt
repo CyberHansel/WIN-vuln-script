@@ -1,0 +1,3 @@
+# Find computers on a domain that have unrestricted kerberos delegation property set
+Get-ADComputer -Filter {TrustedForDelegation -eq $true -and primarygroupid -eq 515} -Properties trustedfordelegation,serviceprincipalname,description
+
