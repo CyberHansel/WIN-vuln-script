@@ -1,5 +1,6 @@
 # Find computers on a domain that have unrestricted kerberos delegation property set
 # Mitigation, cautious of whom allow privilege "Enable computer and user accounts to be trusted for delegation". Users who can enable unrestricted kerberos delagation.
 # Enable "Account is sensitive" and cannot be delegated for high privileged accounts
+
 Get-ADComputer -Filter {TrustedForDelegation -eq $true -and primarygroupid -eq 515} -Properties trustedfordelegation,serviceprincipalname,description
 
